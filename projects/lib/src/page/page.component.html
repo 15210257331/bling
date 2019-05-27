@@ -1,0 +1,11 @@
+<div class="page-wrap" *ngIf="totalPage">
+    <span [ngClass]="{'disabled':_curPage === 1}" 
+          onselectstart="return false"  class="previous" 
+          (click)="previous()">上一页</span>
+    <span onselectstart="return false"  *ngFor="let item of pageList; let i = index;" 
+          [ngClass]="{'selected' : item === _curPage}" 
+          (click)="change(item, i)">{{item}}</span>
+    <span [ngClass]="{'disabled':_curPage === totalPage}"
+          onselectstart="return false"  class="next" 
+          (click)="next()">下一页</span>
+</div>
