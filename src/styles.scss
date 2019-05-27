@@ -1,2 +1,3 @@
 // 引入一个全局的样式
-@import '../projects/lib/src/style/index.scss'
+@import '~@angular/cdk/overlay-prebuilt.css';
+@import '../mushroom-design/src/style/index.scss';
