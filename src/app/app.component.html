@@ -1,15 +1,24 @@
 <!--The content below is only a placeholder and can be replaced.-->
 
-<router-outlet></router-outlet>
+<div class="wrap">
+    <nav>
+        <li [routerLink]="['/button']">button</li>
+        <li [routerLink]="['/page']">page</li>
+        <li [routerLink]="['/model']">model</li>
+    </nav>
+    <main>
+        <router-outlet></router-outlet>
+    </main>
+</div>
 
 
-<button bl-button [blSquare]="true">测试的按钮</button>
-
-<button bl-button [blType]="'default'" [blSquare]="true">搜索</button>
-<button bl-button [blType]="'default'" [blSquare]="true" [blEmpty]="true">重置</button>
 
 
-<app-page [totalNumber]="78" [curPage]="3" [pageSize]="10"></app-page>
 
 
-<button (click)="openDailog()">打开一个弹窗</button>
+
+
+
+
+
+

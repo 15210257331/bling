@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { ThyDialog } from 'mushroom-design/src/dialog';
-import { ModelComponent } from './model/model.component';
+import { ThyDialog } from 'bling/src/dialog';
+
 
 @Component({
   selector: 'app-root',
@@ -9,18 +9,6 @@ import { ModelComponent } from './model/model.component';
 })
 export class AppComponent {
   constructor(
-    public thyDialog: ThyDialog
   ) { }
 
-
-  openDailog() {
-    this.thyDialog.open(
-      ModelComponent,
-      {
-        initialState: {
-          data: '123'
-        }
-      }
-    )
-  }
 }

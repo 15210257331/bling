@@ -6,13 +6,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 // 引入模块
-import { MushroomModule } from 'mushroom-design/src/public-api';
-import { ModelComponent } from './model/model.component';
+import { MushroomModule } from 'bling/src/public-api';
+
+import { ButtonComponent } from './example/button/button.component';
+import { PageComponent } from './example/page/page.component';
+import { ModelComponentComponent } from './example/model/model-component/model-component.component';
+import { ModelComponent } from './example/model/model.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ModelComponent
+    ButtonComponent,
+    PageComponent,
+    ModelComponent,
+    ModelComponentComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +28,7 @@ import { ModelComponent } from './model/model.component';
     MushroomModule.forRoot()
   ],
   entryComponents: [
-    ModelComponent
+    ModelComponentComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

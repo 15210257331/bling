@@ -1,0 +1,8 @@
+
+// 使用cdk要引入的默认的样式
+@import '~@angular/cdk/overlay-prebuilt.css';
+
+// 每个组件的样式
+@import '../button/styles/button.scss';
+@import '../page/styles/page.scss';
+@import '../dialog/styles/dialog.scss';

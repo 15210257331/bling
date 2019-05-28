@@ -131,33 +131,33 @@
                 }
             }
         },
-        "mushroom-design": {
-            "root": "mushroom-design",
-            "sourceRoot": "mushroom-design/src",
+        "bling": {
+            "root": "bling",
+            "sourceRoot": "bling/src",
             "projectType": "library",
-            "prefix": "lib",
+            "prefix": "bl",
             "architect": {
                 "build": {
                     "builder": "@angular-devkit/build-ng-packagr:build",
                     "options": {
-                        "tsConfig": "mushroom-design/tsconfig.lib.json",
-                        "project": "mushroom-design/ng-package.json"
+                        "tsConfig": "bling/tsconfig.lib.json",
+                        "project": "bling/ng-package.json"
                     }
                 },
                 "test": {
                     "builder": "@angular-devkit/build-angular:karma",
                     "options": {
-                        "main": "mushroom-design/src/test.ts",
-                        "tsConfig": "mushroom-design/tsconfig.spec.json",
-                        "karmaConfig": "mushroom-design/karma.conf.js"
+                        "main": "bling/src/test.ts",
+                        "tsConfig": "bling/tsconfig.spec.json",
+                        "karmaConfig": "bling/karma.conf.js"
                     }
                 },
                 "lint": {
                     "builder": "@angular-devkit/build-angular:tslint",
                     "options": {
                         "tsConfig": [
-                            "mushroom-design/tsconfig.lib.json",
-                            "mushroom-design/tsconfig.spec.json"
+                            "bling/tsconfig.lib.json",
+                            "bling/tsconfig.spec.json"
                         ],
                         "exclude": [
                             "**/node_modules/**"

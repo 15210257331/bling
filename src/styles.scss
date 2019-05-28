@@ -1,3 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+
 // 引入一个全局的样式
-@import '~@angular/cdk/overlay-prebuilt.css';
-@import '../mushroom-design/src/style/index.scss';
+@import '../bling/src/styles/index.scss';
