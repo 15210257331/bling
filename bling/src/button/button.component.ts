@@ -1,19 +1,25 @@
-import { Component, OnInit, ViewEncapsulation, ChangeDetectionStrategy, Input, ElementRef, Renderer2 } from '@angular/core';
+import { Component, OnInit, Input, ElementRef, Renderer2, ChangeDetectionStrategy } from '@angular/core';
 
-export type blType = 'default' | 'primary' | 'success' | 'danger';
+export type blType = 'default' | 'warning' | 'danger' | 'link' | 'empty';
 
-export type blSize = 'default' | 'large' | 'small';
+export type blSize = 'md' | 'lg' | 'sm';
+
+const blTypeClassesMap: any = {
+  'default': ['btn', 'btn-default'],
+  'warning': ['btn', 'btn-warning'],
+  'danger': ['btn', 'btn-danger'],
+  'link': ['btn', 'btn-link'], // 只有文本 没有按钮形状
+  'empty': ['btn', 'btn-empty'], // 空心按钮
+};
 
 @Component({
   selector: '[bl-button]',
   templateUrl: './button.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush // OnPush策略是只有输入属性改变的时候会触发变更检测，当输入属性没变的时候也想触发检测的话使用mark什么什么方法
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ButtonComponent implements OnInit {
 
-  _iconClass: string[];
-
-  _classNames: string[] = [];
+  private _classNames: string[] = [];
 
   private _nativeElement: any;
 
@@ -21,11 +27,12 @@ export class ButtonComponent implements OnInit {
 
   private _blSize: blSize;
 
+  // 是否显示圆角默认非圆角
   private _blSquare: boolean = false;
 
-  _blIcon: boolean = false;
+  public _blIcon: boolean = false;
 
-  private _blEmpty: boolean = false;
+  public _iconClass: string[];
 
   private _blDisabled: boolean = false;
 
@@ -55,21 +62,12 @@ export class ButtonComponent implements OnInit {
     this._setClasses();
   }
 
-  @Input() blIcon(value: boolean) {
+  @Input() 
+  set blIcon(value: boolean) {
     if (value) {
       this._blIcon = value;
     } else {
       this._blIcon = false;
-    }
-    this._setClasses();
-  }
-
-  @Input()
-  set blEmpty(value: boolean) {
-    if (value) {
-      this._blEmpty = value;
-    } else {
-      this._blEmpty = false;
     }
     this._setClasses();
   }
@@ -97,28 +95,34 @@ export class ButtonComponent implements OnInit {
     this._setClasses();
   }
 
-  // 设置class
+  // 设置class数组
   private _setClasses() {
-    let classNames: string[] = ['btn'];
-    if (this._blType) {
-      classNames.push(`btn-type-${this._blType}`);
+    let classNames: string[] = null;
+    if (blTypeClassesMap[this._blType]) {
+      classNames = [...blTypeClassesMap[this._blType]];
+    } else {
+      classNames = ['btn'];
+      if (this._blType) {
+        classNames.push(`btn-${this._blType}`);
+      }
     }
     if (this._blSize) {
-      classNames.push(`btn-size-${this._blSize}`);
+      classNames.push(`btn-${this._blSize}`);
     }
     if (this._blIcon) {
       classNames.push(`btn-icon`);
     }
-    if (this._blEmpty) {
-      classNames.push('btn-empty');
-    }
     if (this._blDisabled) {
-      classNames.push('btn-disabled');
+      if(this._blType === 'link') {
+        classNames.push('btn-link-disabled');
+      } else {
+        classNames.push('btn-disabled');
+      }
     }
     if (this._blSquare && this._blSize) {
       classNames.push(`btn-square-${this._blSize}`);
     } else if (this._blSquare && !this._blSize) {
-      classNames.push(`btn-square-default`);
+      classNames.push(`btn-square-md`);
     }
     this.updateClass(classNames);
   }
@@ -150,4 +154,5 @@ export class ButtonComponent implements OnInit {
   private removeClass(className: string) {
     this.renderer.removeClass(this._nativeElement, className);
   }
+
 }

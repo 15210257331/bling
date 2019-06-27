@@ -8,6 +8,9 @@ import { ThyDialog } from 'bling/src/dialog';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
+  componentArray: any[] = [];
+  
   constructor(
   ) { }
 
