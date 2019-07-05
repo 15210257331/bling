@@ -1,0 +1,10 @@
+<div *ngIf="show" class="overlay"
+  [ngStyle]="{'background-color': blLoadingRef.bdColor, 'opacity': blLoadingRef.bdOpacity}"
+  [style.position]="blLoadingRef.fullScreen ? 'fixed' : 'absolute'">
+  <div [class]="blLoadingRef.class" [style.color]="blLoadingRef.color">
+    <div *ngFor="let index of blLoadingRef.divArray"></div>
+  </div>
+  <div class="loading-text">
+    <ng-content></ng-content>
+  </div>
+</div>

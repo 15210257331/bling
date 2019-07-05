@@ -6,12 +6,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 // 引入模块
-import { MushroomModule } from 'bling/src/public-api';
+import { BlingModule } from '../../bling/src/module';
 
 import { ButtonComponent } from './example/button/button.component';
 import { PageComponent } from './example/page/page.component';
 import { ModelComponentComponent } from './example/model/model-component/model-component.component';
 import { ModelComponent } from './example/model/model.component';
+import { LoadingComponent } from './example/loading/loading.component';
+
 
 @NgModule({
   declarations: [
@@ -19,13 +21,14 @@ import { ModelComponent } from './example/model/model.component';
     ButtonComponent,
     PageComponent,
     ModelComponent,
-    ModelComponentComponent
+    ModelComponentComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MushroomModule.forRoot()
+    BlingModule.forRoot()
   ],
   entryComponents: [
     ModelComponentComponent
