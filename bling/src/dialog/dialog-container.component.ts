@@ -32,6 +32,7 @@ import { ThyClickPositioner } from '../shared';
     // Disabled until we can track them down.
     changeDetection: ChangeDetectionStrategy.Default,
     animations: [thyDialogAnimations.dialogContainer],
+    // host 使用一组键-值对，把类的属性映射到宿主元素的绑定（Property、Attribute 和事件）。
     host: {
         class: 'thy-dialog-container',
         tabindex: '-1',

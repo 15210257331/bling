@@ -63,12 +63,11 @@ export class ThyDialog implements OnDestroy {
         dialogContainer: ThyDialogContainerComponent
     ): PortalInjector {
         const userInjector = config && config.viewContainerRef && config.viewContainerRef.injector;
-
         const injectionTokens = new WeakMap<any, any>([
             [ThyDialogContainerComponent, dialogContainer],
             [ThyDialogRef, dialogRef]
         ]);
-
+        console.log(injectionTokens);
         if (config.direction && (!userInjector || !userInjector.get<Directionality | null>(Directionality, null))) {
             injectionTokens.set(Directionality, {
                 value: config.direction,
