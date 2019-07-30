@@ -13,6 +13,7 @@ import { PageComponent } from './example/page/page.component';
 import { ModelComponentComponent } from './example/model/model-component/model-component.component';
 import { ModelComponent } from './example/model/model.component';
 import { LoadingComponent } from './example/loading/loading.component';
+import { MessageComponent } from './example/message/message.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { LoadingComponent } from './example/loading/loading.component';
     PageComponent,
     ModelComponent,
     ModelComponentComponent,
-    LoadingComponent
+    LoadingComponent,
+    MessageComponent
   ],
   imports: [
     BrowserModule,

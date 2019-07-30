@@ -3,7 +3,10 @@
     padding: 0;
     list-style: none;
 }
-
+html, body {
+    width: 100%;
+    height: 100%;
+}
 
 // 引入一个全局的样式
 @import '../bling/src/styles/index.scss';
