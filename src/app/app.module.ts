@@ -13,7 +13,7 @@ import { PageComponent } from './example/page/page.component';
 import { ModelComponentComponent } from './example/model/model-component/model-component.component';
 import { ModelComponent } from './example/model/model.component';
 import { LoadingComponent } from './example/loading/loading.component';
-import { MessageComponent } from './example/message/message.component';
+import { TooltipComponent } from './example/tooltip/tooltip.component';
 
 
 @NgModule({
@@ -24,7 +24,7 @@ import { MessageComponent } from './example/message/message.component';
     ModelComponent,
     ModelComponentComponent,
     LoadingComponent,
-    MessageComponent
+    TooltipComponent
   ],
   imports: [
     BrowserModule,

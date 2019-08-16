@@ -17,6 +17,13 @@ header {
         height: 100%;
         background-color: white;
         border-right: 1px solid #dddddd;
+        h3 {
+            font-weight: 900;
+            padding-left: 20px;
+            font-size: 28px;
+            line-height: 50px;
+            margin: 15px 0;
+        }
         li {
             height: 35px;
             text-align: center;
@@ -24,12 +31,20 @@ header {
             font-size: 18px;
             cursor: pointer;
             outline: none;
-            margin: 10px 0;
-            color: black
+            margin: 5px 0;
+            color: black;
+            text-align: left;
+            padding-left: 30px;
         }
         li:hover {
-            color: #ffc442;
-            background-color: #00FA9A;
+            color: #dddddd;
+            background-color: salmon;
+            opacity: 0.9;
+        }
+        .active {
+            background-color: salmon;
+            color: #dddddd;
+            opacity: 0.9;
         }
     }
     main {

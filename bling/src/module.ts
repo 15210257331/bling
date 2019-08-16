@@ -3,14 +3,16 @@ import { ButtonModule } from './button';
 import { PageModule } from './page';
 import { ThyDialogModule } from './dialog';
 import { LoadingModule } from './loading';
+import { TooltipModule } from './tooltip';
 
 
 const IMPORT_EXPORT_MODULES = [
     ButtonModule,
     PageModule,
     ThyDialogModule,
-    LoadingModule
-]
+    LoadingModule,
+    TooltipModule
+];
 
 @NgModule({
     declarations: [],

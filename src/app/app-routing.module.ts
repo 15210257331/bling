@@ -4,7 +4,7 @@ import { ButtonComponent } from './example/button/button.component';
 import { PageComponent } from './example/page/page.component';
 import { ModelComponent } from './example/model/model.component';
 import { LoadingComponent } from './example/loading/loading.component';
-import { MessageComponent } from './example/message/message.component';
+import { TooltipComponent } from './example/tooltip/tooltip.component';
 
 
 const routes: Routes = [
@@ -13,7 +13,7 @@ const routes: Routes = [
   { path: 'page', component: PageComponent },
   { path: 'model', component: ModelComponent },
   { path: 'loading', component: LoadingComponent },
-  { path: 'message', component: MessageComponent },
+  { path: 'tooltip', component: TooltipComponent },
 ];
 
 @NgModule({

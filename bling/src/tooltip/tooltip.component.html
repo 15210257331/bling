@@ -1,0 +1,9 @@
+<div class="bl-tooltip-arrow"></div>  <!--三角形-->
+<div class="bl-tooltip-content">
+  <ng-container *ngIf="isTemplateRef; else text">
+    <ng-container *ngTemplateOutlet="content; context: { $implicit: data }"></ng-container>
+  </ng-container>
+  <ng-template #text>
+    {{ content }}
+  </ng-template>
+</div>

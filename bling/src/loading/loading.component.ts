@@ -1,4 +1,4 @@
-import { Component, OnInit, OnChanges, OnDestroy, Input, Attribute, SimpleChanges, SimpleChange } from '@angular/core';
+import { Component, OnInit, OnChanges, OnDestroy, Input, Attribute, SimpleChanges, SimpleChange, ViewEncapsulation } from '@angular/core';
 import { defaultBlLoadingConfig, Size, BlLoadingRef, loadingAnimationTypes } from './loading.config';
 import { Subject } from 'rxjs';
 import { BlLoadingService } from './loading.service';
@@ -7,7 +7,7 @@ import { takeUntil } from 'rxjs/operators';
 @Component({
   selector: 'bl-loading',
   templateUrl: './loading.component.html',
-  styleUrls: ['./loading.component.css']
+  encapsulation: ViewEncapsulation.None,
 })
 export class LoadingComponent implements OnInit, OnChanges, OnDestroy {
 

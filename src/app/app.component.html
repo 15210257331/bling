@@ -2,13 +2,12 @@
 <header>bling bling bling</header>
 <div class="wrap">
     <nav>
-        <h3 class="title"></h3>
-        <p class="sub-title"></p>
-        <li [routerLink]="['/button']">按钮</li>
-        <li [routerLink]="['/page']">分页</li>
-        <li [routerLink]="['/model']">弹窗</li>
-        <li [routerLink]="['/loading']">loading</li>
-        <li [routerLink]="['/message']">message</li>
+        <h3 class="title">components</h3>
+        <li [routerLink]="['/button']" routerLinkActive="active">按钮</li>
+        <li [routerLink]="['/page']" routerLinkActive="active">分页</li>
+        <li [routerLink]="['/model']" routerLinkActive="active">弹窗</li>
+        <li [routerLink]="['/loading']" routerLinkActive="active">loading</li>
+        <li [routerLink]="['/tooltip']" routerLinkActive="active">tooltip</li>
     </nav>
     <main>
         <router-outlet></router-outlet>

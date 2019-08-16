@@ -1,9 +1,10 @@
-import { Component, OnInit, Input, forwardRef, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, Input, forwardRef, EventEmitter, Output, ViewEncapsulation } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 
 @Component({
   selector: 'bl-page',
   templateUrl: './page.component.html',
+  encapsulation: ViewEncapsulation.None,
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
