@@ -1,16 +1,43 @@
-<h3></h3>
-<p>
-  <button bl-button [blType]="'default'" [blSquare]="false">default</button>
-  <button bl-button [blType]="'warning'" [blSquare]="true">warning</button>
-  <button bl-button [blType]="'danger'"  [blSquare]="true">danger</button>
-  <button bl-button [blType]="'link'" [blSquare]="true">link</button>
-  <button bl-button [blType]="'empty'" [blSquare]="false" >空心</button>
-  <button bl-button [blType]="'empty'" [blSquare]="true" [blDisabled]="true">link</button>
-  <button blSize="lg" bl-button [blType]="'empty'" [blSquare]="false">lg按钮</button>
-  <button blSize="sm" bl-button [blType]="'empty'" [blSquare]="true">sm按钮</button>
-  <button blSize="md" bl-button [blType]="'empty'" [blSquare]="false">默认按钮</button>
-</p>
+<div class="part">
+  <span>方形按钮</span>
+  <p>
+    <button bl-button [blType]="'default'" [blSquare]="false">默认按钮</button>
+    <button bl-button [blType]="'warning'" [blSquare]="false">告警按钮</button>
+    <button bl-button [blType]="'danger'" [blSquare]="false">危险按钮</button>
+    <button bl-button [blType]="'link'" [blSquare]="false">链接按钮</button>
+    <button bl-button [blType]="'empty'" [blSquare]="false">空心按钮</button>
+  </p>
+  <span>圆形按钮</span>
+  <p>
+    <button bl-button [blType]="'default'" [blSquare]="true">默认按钮</button>
+    <button bl-button [blType]="'warning'" [blSquare]="true">告警按钮</button>
+    <button bl-button [blType]="'danger'" [blSquare]="true">危险按钮</button>
+    <button bl-button [blType]="'link'" [blSquare]="true">链接按钮</button>
+    <button bl-button [blType]="'empty'" [blSquare]="true">空心按钮</button>
+  </p>
+  <span>禁用按钮</span>
+  <p>
+    <button bl-button [blType]="'default'" [blDisabled]="true" [blSquare]="true">默认按钮</button>
+    <button bl-button [blType]="'warning'" [blDisabled]="true" [blSquare]="true">告警按钮</button>
+    <button bl-button [blType]="'danger'" [blDisabled]="true" [blSquare]="true">危险按钮</button>
+    <button bl-button [blType]="'link'" [blDisabled]="true" [blSquare]="true">链接按钮</button>
+    <button bl-button [blType]="'empty'" [blDisabled]="true" [blSquare]="true">空心按钮</button>
+  </p>
+  <span>不同大小</span>
+  <p>
+    <button blSize="lg" bl-button [blType]="'empty'" [blSquare]="false">lg按钮</button>
+    <button blSize="sm" bl-button [blType]="'empty'" [blSquare]="false">sm按钮</button>
+    <button blSize="md" bl-button [blType]="'empty'" [blSquare]="false">默认按钮</button>
+    <button blSize="lg" bl-button [blType]="'default'" [blSquare]="true">lg按钮</button>
+    <button blSize="sm" bl-button [blType]="'default'" [blSquare]="true">sm按钮</button>
+    <button blSize="md" bl-button [blType]="'default'" [blSquare]="true">默认按钮</button>
+  </p>
+</div>
 
+<div class="part">
+  <pre><code class="code" lang="typescript" [highlight]="aa"></code></pre>
+</div>
 
-
-
+<div class="part">
+  <app-api-table [apis]="apis"></app-api-table>
+</div>

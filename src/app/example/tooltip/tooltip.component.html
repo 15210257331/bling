@@ -1,29 +1,51 @@
-<P>
-  <button bl-button [blType]="'warning'" [blSquare]="false"
-  blTooltip="Hello, welcome to use WorktileHello, welcome to use WorktileHello, welcome to use WorktileHello, welcome to use WorktileHello, welcome to use WorktileHello, welcome to use WorktileHello, welcome to use WorktileHello, welcome to use Worktile"
-  [blTooltipTrigger]="'click'"
-  [blTooltipPlacement]="tooltipConfig.placement"
-  [blTooltipShowDelay]="tooltipConfig.showDelay"
-  [blTooltipHideDelay]="tooltipConfig.hideDelay"
-  [blTooltipOffset]="tooltipConfig.offset"
-  [blTooltipPin]="tooltipConfig.thyTooltipPin"
->
-  click show tootip
-</button>
-</P>
+<div class="part">
+  <span>普通用法</span>
+  <P>
+    <button bl-button [blType]="'warning'" [blSquare]="false"
+      blTooltip="this is a click tootip bling bling bling,this is a click tootip bling bling blingthis is a click tootip bling bling blingthis is a click tootip bling bling blingthis is a click tootip bling bling bling"
+      [blTooltipTrigger]="'click'" [blTooltipPlacement]="tooltipConfig.placement"
+      [blTooltipShowDelay]="tooltipConfig.showDelay" [blTooltipHideDelay]="tooltipConfig.hideDelay"
+      [blTooltipOffset]="tooltipConfig.offset" [blTooltipPin]="tooltipConfig.thyTooltipPin">
+      click show tootip
+    </button>
+    <span blTooltip="this is a hover tootip bling bling bling" [blTooltipTrigger]="'hover'"
+      [blTooltipPlacement]="tooltipConfig.placement" [blTooltipShowDelay]="tooltipConfig.showDelay"
+      [blTooltipHideDelay]="tooltipConfig.hideDelay" [blTooltipOffset]="tooltipConfig.offset"
+      [blTooltipPin]="tooltipConfig.thyTooltipPin">
+      hover show tootip
+    </span>
+  </P>
+</div>
+
+<div class="part">
+  <pre><code class="code" lang="typescript" [highlight]="aa"></code></pre>
+</div>
+
+<div class="part">
+  <span>使用template</span>
+  <p>
+    <button bl-button [blType]="'warning'" [blSquare]="false" [blTooltip]="world"
+      [blTooltipTrigger]="tooltipConfig.trigger" [blTooltipTemplateContext]="{ values: [1, 2, 3, 4] }"
+      [blTooltipPlacement]="tooltipConfig.placement" [blTooltipOffset]="tooltipConfig.offset">
+      Tooltip with Template
+    </button>
+    <ng-template #world let-data>
+      <div>
+        My custom tooltip message with template data
+        <div *ngFor="let item of data.values">
+          {{ item }}
+        </div>
+      </div>
+    </ng-template>
+  </p>
+</div>
 
 
-<p>
-  <span
-  class="ml-2"
-  blTooltip="Hello, welcome to use Worktile"
-  [blTooltipTrigger]="'hover'"
-  [blTooltipPlacement]="tooltipConfig.placement"
-  [blTooltipShowDelay]="tooltipConfig.showDelay"
-  [blTooltipHideDelay]="tooltipConfig.hideDelay"
-  [blTooltipOffset]="tooltipConfig.offset"
-  [blTooltipPin]="tooltipConfig.thyTooltipPin"
->
-  hover show tootip
-</span>
-</p>
+<div class="part">
+    <pre><code class="code" lang="typescript" [highlight]="bb"></code></pre>
+  </div>
+
+
+<div class="part">
+  <app-api-table [apis]="apis"></app-api-table>
+</div>

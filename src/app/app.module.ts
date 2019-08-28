@@ -5,6 +5,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+import { HighlightModule } from 'ngx-highlightjs';
+import xml from 'highlight.js/lib/languages/xml';
+import scss from 'highlight.js/lib/languages/scss';
+import typescript from 'highlight.js/lib/languages/typescript';
+
 // 引入模块
 import { BlingModule } from '../../bling/src/module';
 
@@ -14,6 +19,15 @@ import { ModelComponentComponent } from './example/model/model-component/model-c
 import { ModelComponent } from './example/model/model.component';
 import { LoadingComponent } from './example/loading/loading.component';
 import { TooltipComponent } from './example/tooltip/tooltip.component';
+import { ApiTableComponent } from './api-table/api-table.component';
+
+export function hljsLanguages() {
+  return [
+    {name: 'typescript', func: typescript},
+    {name: 'scss', func: scss},
+    {name: 'xml', func: xml}
+  ];
+}
 
 
 @NgModule({
@@ -24,13 +38,17 @@ import { TooltipComponent } from './example/tooltip/tooltip.component';
     ModelComponent,
     ModelComponentComponent,
     LoadingComponent,
-    TooltipComponent
+    TooltipComponent,
+    ApiTableComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    BlingModule.forRoot()
+    BlingModule.forRoot(),
+    HighlightModule.forRoot({
+      languages: hljsLanguages
+    })
   ],
   entryComponents: [
     ModelComponentComponent

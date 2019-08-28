@@ -1,0 +1,25 @@
+table {
+  width: 100%;
+  max-width: 100%;
+  color: #333;
+  margin-bottom: 0.75rem;
+  background-color: transparent;
+  border-collapse: collapse;
+  tr {
+
+    th,
+    td {
+      text-align: center;
+      color: #666;
+      vertical-align: bottom;
+      font-weight: 400;
+      border-bottom: 1px solid #eee;
+      padding: 12px 15px;
+      border: 1px solid #eeeeee;
+    }
+
+    th {
+      background-color: #f3f3f3;
+    }
+  }
+}

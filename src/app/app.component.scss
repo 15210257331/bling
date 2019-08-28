@@ -1,16 +1,18 @@
+
 header {
     width: 100%;
     height: 60px;
-    text-align: center;
+    text-align: left;
     line-height: 60px;
-    font-size: 30px;
+    font-size: 25px;
     font-weight: 500;
-    background-color: salmon;
+    padding-left: 30px;
+    background-color: #22d7bb;
     color: white;
 }
 .wrap {
     width: 100%;
-    height: 100%;
+    // height: calc(100% - 60px);
     nav {
         width: 200px;
         position: absolute;
@@ -18,39 +20,38 @@ header {
         background-color: white;
         border-right: 1px solid #dddddd;
         h3 {
-            font-weight: 900;
+            font-weight: 500;
             padding-left: 20px;
-            font-size: 28px;
+            font-size: 26px;
             line-height: 50px;
             margin: 15px 0;
+            color: rgba(0, 0, 0, 0.65);
         }
         li {
             height: 35px;
             text-align: center;
             line-height: 35px;
-            font-size: 18px;
+            font-size: 15px;
             cursor: pointer;
             outline: none;
             margin: 5px 0;
-            color: black;
+            color: rgba(0, 0, 0, 0.65);
             text-align: left;
             padding-left: 30px;
         }
         li:hover {
-            color: #dddddd;
-            background-color: salmon;
-            opacity: 0.9;
+            color: #22d7bb;
         }
         .active {
-            background-color: salmon;
-            color: #dddddd;
-            opacity: 0.9;
+            color: #22d7bb;
+            background-color: rgba(162, 240, 228, 0.397)
         }
     }
     main {
         padding: 15px;
         margin-left: 200px;
         height: 100%;
-        background-color: white;
+        background-color: #F5F5F5;
+        overflow: auto;
     }
 }

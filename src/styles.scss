@@ -8,5 +8,28 @@ html, body {
     height: 100%;
 }
 
+@import '~highlight.js/styles/github.css';
+
 // 引入一个全局的样式
 @import '../bling/src/styles/index.scss';
+
+.part {
+    background-color: white;
+    border-radius: 4px;
+    margin: 10px;
+    padding: 12px;
+
+    p {
+        margin: 20px 0;
+    }
+
+    span {
+        margin: 0 15px 15px 15px;
+        color: #333333;
+    }
+}
+
+.code {
+    font-size: 16px;
+    background-color:#DCDCDC;
+}
