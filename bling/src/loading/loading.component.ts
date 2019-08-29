@@ -63,6 +63,7 @@ export class LoadingComponent implements OnInit, OnChanges, OnDestroy {
     this.blLoadingRef = new BlLoadingRef({
       name: this.name,
       bdColor: this.bdColor,
+      bdOpacity: this.bdOpacity,
       size: this.size,
       color: this.color,
       type: this.type,

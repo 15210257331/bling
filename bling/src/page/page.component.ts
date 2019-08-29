@@ -15,34 +15,34 @@ import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 })
 export class PageComponent implements OnInit, ControlValueAccessor {
 
-  _totalNumber: number;
+  _totalNumber: number = 0;
 
-  _curPage: number;
+  _curPage: number = 1;
 
-  _pageSize = 10;
+  _pageSize: number = 10;
 
   totalPage: number;
 
   pageList: Array<number> = [];
 
-  @Output() pageChange: EventEmitter<Number> = new EventEmitter<number>();
+  @Output() pageChange: EventEmitter<number> = new EventEmitter<number>();
 
   onChange: (value: number) => void = () => null;
 
   onTouched: () => void = () => null;
 
   @Input()
-  set curPage (value: number) {
+  set curPage(value: number) {
     this._curPage = value;
   }
 
   @Input()
-  set totalNumber (value: number) {
+  set totalNumber(value: number) {
     this._totalNumber = value;
   }
 
   @Input()
-  set pageSize (value: number) {
+  set pageSize(value: number) {
     if (value) {
       this._pageSize = value;
     }
@@ -69,7 +69,7 @@ export class PageComponent implements OnInit, ControlValueAccessor {
 
   previous() {
     if (this._curPage > 1) {
-      this._curPage --;
+      this._curPage--;
       this._makePageList(this.totalPage, this._curPage, 2);
       this.pageChange.emit(this._curPage);
     }
@@ -77,13 +77,13 @@ export class PageComponent implements OnInit, ControlValueAccessor {
 
   next() {
     if (this._curPage < this.totalPage) {
-      this._curPage ++;
+      this._curPage++;
       this._makePageList(this.totalPage, this._curPage, 2);
       this.pageChange.emit(this._curPage);
     }
   }
 
-  private _makePageList (totalPage: number, curPage: number, aroundNumber: number) {
+  private _makePageList(totalPage: number, curPage: number, aroundNumber: number) {
     let result = [];
     const baseCount = aroundNumber * 2 + 1 + 2 + 2 + 2; // 总共元素个数
     const surplus = baseCount - 4; // 只出现一个省略号 剩余元素个数
@@ -91,17 +91,17 @@ export class PageComponent implements OnInit, ControlValueAccessor {
     const endPosition = totalPage - 2 - aroundNumber - 1; // 后面出现省略号的临界点
 
     if (totalPage <= baseCount - 2) { // 全部显示 不出现省略号
-        result =  Array.from({length: totalPage}, (v, i) => i + 1);
+      result = Array.from({ length: totalPage }, (v, i) => i + 1);
     } else { // 需要出现省略号
-        if (curPage < startPosition) { // 1.只有后面出现省略号
-            result = [...Array.from({length: surplus}, (v, i) => i + 1), '...', totalPage];
-        } else if (curPage > endPosition) { // 2.只有前边出现省略号
-            result = [1, '...', ...Array.from({length: surplus}, (v, i) => totalPage - surplus + i + 1)];
-        } else { // 3.两边都有省略号
-            result = [1, '...', ...Array.from({length: aroundNumber * 2 + 1}, (v, i) => curPage - aroundNumber + i), '...', totalPage];
-        }
+      if (curPage < startPosition) { // 1.只有后面出现省略号
+        result = [...Array.from({ length: surplus }, (v, i) => i + 1), '...', totalPage];
+      } else if (curPage > endPosition) { // 2.只有前边出现省略号
+        result = [1, '...', ...Array.from({ length: surplus }, (v, i) => totalPage - surplus + i + 1)];
+      } else { // 3.两边都有省略号
+        result = [1, '...', ...Array.from({ length: aroundNumber * 2 + 1 }, (v, i) => curPage - aroundNumber + i), '...', totalPage];
+      }
     }
-    this.pageList =  result;
+    this.pageList = result;
   }
 
   writeValue(value: number) {

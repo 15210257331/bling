@@ -1,11 +1,8 @@
-<div class="page-wrap" *ngIf="totalPage">
-    <span [ngClass]="{'disabled':_curPage === 1}" 
-          onselectstart="return false"  class="previous" 
-          (click)="previous()">上一页</span>
-    <span onselectstart="return false"  *ngFor="let item of pageList; let i = index;" 
-          [ngClass]="{'selected' : item === _curPage}" 
-          (click)="change(item, i)">{{item}}</span>
-    <span [ngClass]="{'disabled':_curPage === totalPage}"
-          onselectstart="return false"  class="next" 
-          (click)="next()">下一页</span>
+<div class="bl-page-wrap" *ngIf="totalPage">
+  <span class="bl-page-item bl-page-previous" [ngClass]="{'bl-page-disabled':_curPage === 1}" onselectstart="return false"
+    (click)="previous()">上一页</span>
+  <span class="bl-page-item" [ngClass]="{'bl-page-selected' : item === _curPage}" onselectstart="return false" *ngFor="let item of pageList; let i = index;"
+     (click)="change(item, i)">{{item}}</span>
+  <span class="bl-page-item bl-page-next" [ngClass]="{'bl-page-disabled':_curPage === totalPage}" onselectstart="return false"
+    (click)="next()">下一页</span>
 </div>
