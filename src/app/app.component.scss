@@ -1,6 +1,8 @@
+.container {
+  position: relative;
+  height: 100%;
 
-header {
-    width: 100%;
+  header {
     height: 60px;
     text-align: left;
     line-height: 60px;
@@ -9,49 +11,58 @@ header {
     padding-left: 30px;
     background-color: #22d7bb;
     color: white;
-}
-.wrap { 
+  }
+
+  .wrap {
     width: 100%;
-    // height: calc(100% - 60px);
+    position: absolute;
+    top: 60px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
     nav {
-        width: 200px;
-        position: absolute;
-        height: 100%;
-        background-color: white;
-        border-right: 1px solid #dddddd;
-        h3 {
-            font-weight: 500;
-            padding-left: 20px;
-            font-size: 26px;
-            line-height: 50px;
-            margin: 15px 0;
-            color: rgba(0, 0, 0, 0.65);
-        }
-        li {
-            height: 35px;
-            text-align: center;
-            line-height: 35px;
-            font-size: 15px;
-            cursor: pointer;
-            outline: none;
-            margin: 5px 0;
-            color: rgba(0, 0, 0, 0.65);
-            text-align: left;
-            padding-left: 30px;
-        }
-        li:hover {
+      width: 200px;
+      position: absolute;
+      height: 100%;
+      background-color: white;
+      border-right: 1px solid #dddddd;
+
+      h3 {
+        font-weight: 500;
+        padding-left: 20px;
+        font-size: 26px;
+        line-height: 50px;
+        margin: 15px 0;
+        color: rgba(0, 0, 0, 0.65);
+      }
+
+      li {
+        height: 35px;
+        text-align: center;
+        line-height: 35px;
+        font-size: 15px;
+        cursor: pointer;
+        outline: none;
+        margin: 5px 0;
+        color: rgba(0, 0, 0, 0.65);
+        text-align: left;
+        padding-left: 30px;
+        &:hover {
             color: #22d7bb;
         }
-        .active {
-            color: #22d7bb;
-            background-color: rgba(162, 240, 228, 0.397)
-        }
+      }
+      .active {
+        color: #22d7bb;
+        background-color: rgba(162, 240, 228, 0.397)
+      }
     }
+
     main {
-        padding: 15px;
-        margin-left: 200px;
-        height: 100%;
-        background-color: #F5F5F5;
-        overflow: auto;
+      margin-left: 200px;
+      height: 100%;
+      background-color: #F5F5F5;
+      overflow: auto;
     }
+  }
 }
