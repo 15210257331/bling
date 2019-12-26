@@ -20,6 +20,7 @@ import { ModelComponent } from './example/model/model.component';
 import { LoadingComponent } from './example/loading/loading.component';
 import { TooltipComponent } from './example/tooltip/tooltip.component';
 import { ApiTableComponent } from './api-table/api-table.component';
+import { SwitchComponent } from './example/switch/switch.component';
 
 export function hljsLanguages() {
   return [
@@ -39,7 +40,8 @@ export function hljsLanguages() {
     ModelComponentComponent,
     LoadingComponent,
     TooltipComponent,
-    ApiTableComponent
+    ApiTableComponent,
+    SwitchComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,38 @@
+.switch-container {
+  display: inline-block;
+  width: 52px;
+  height: 26px;
+  border-radius: 24px;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  background-color: #cacaca;
+  border: 1px solid #cacaca;
+  padding: 0;
+
+  &>.switch-ball {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 24px;
+    height: 24px;
+    margin-left: 2px;
+    display: inline-block;
+    border-radius: 50%;
+    background-color: white;
+    transition: left .15s ease-out;
+  }
+}
+
+.switch-check {
+  background-color: #22d7bb !important;
+  border: 1px solid #22d7bb !important;
+
+  &>.switch-ball {
+    left: 22px !important;
+  }
+}
+
+.switch-disabled {
+  cursor: not-allowed;
+}

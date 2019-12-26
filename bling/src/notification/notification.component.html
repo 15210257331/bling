@@ -1,0 +1,26 @@
+<ng-container *ngIf="!option.template">
+  <div class="header">
+    <i></i>
+    <p class="title">{{ option.title }}</p>
+    <i (click)="close()">
+      <svg role="img" xmlns="http://www.w3.org/2000/svg" width="48px" height="48px" viewBox="0 0 24 24"
+        aria-labelledby="closeIconTitle closeIconDesc" stroke="#2329D6" stroke-width="1" stroke-linecap="square"
+        stroke-linejoin="miter" fill="none" color="#eeeeee">
+        <title id="closeIconTitle">Close</title>
+        <desc id="closeIconDesc">Icon of a cross (x)</desc>
+        <path d="M6.34314575 6.34314575L17.6568542 17.6568542M6.34314575 17.6568542L17.6568542 6.34314575" />
+      </svg>
+    </i>
+  </div>
+  <div class="main">
+    <p>{{ option.content }}</p>
+  </div>
+</ng-container>
+<ng-container *ngIf="option.template">
+  <div class="header">
+    <i>关闭</i>
+  </div>
+  <div class="thy-notify-main">
+    <template [ngTemplateOutlet]="option.template"></template>
+  </div>
+</ng-container>

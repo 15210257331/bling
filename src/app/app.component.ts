@@ -10,7 +10,7 @@ import { ThyDialog } from 'bling/src/dialog';
 export class AppComponent {
 
   componentArray: any[] = [];
-  
+
   constructor(
   ) { }
 

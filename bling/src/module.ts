@@ -4,6 +4,8 @@ import { PageModule } from './page';
 import { ThyDialogModule } from './dialog';
 import { LoadingModule } from './loading';
 import { TooltipModule } from './tooltip';
+import { SwitchModule } from './switch';
+import { NotificationModule } from './notification';
 
 
 const IMPORT_EXPORT_MODULES = [
@@ -11,7 +13,9 @@ const IMPORT_EXPORT_MODULES = [
     PageModule,
     ThyDialogModule,
     LoadingModule,
-    TooltipModule
+    TooltipModule,
+    SwitchModule,
+    NotificationModule
 ];
 
 @NgModule({
