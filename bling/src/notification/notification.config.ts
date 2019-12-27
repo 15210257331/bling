@@ -10,17 +10,14 @@ export interface NotificationConfig {
     maxStack?: number;  // 同时最大存在数量
     pauseOnHover?: boolean; // 划过是否清除计时
     animate?: boolean;  // 是否添加动画
+    top?: string | number;
+    bottom?: string | number;
+    placement?: 'topLeft' | 'topRight' | 'bottomLeft' | 'bottomRight' | string;
 }
-
-// export interface NotificationConfig {
-//     top?: string | number;
-//     bottom?: string | number;
-//     placement?: 'topLeft' | 'topRight' | 'bottomLeft' | 'bottomRight' | string; // 显示位置
-// }
 
 // 创建injectionToken
 export const NOTIFICATION_DEFAULT_CONFIG = new InjectionToken<NotificationConfig>('NOTIFICATION_DEFAULT_CONFIG');
-
+// 用于全局注册设置默认的配置参数
 export const NOTIFICATION_CONFIG = new InjectionToken<NotificationConfig>('NOTIFICATION_CONFIG');
 
 // 创建provider
@@ -32,6 +29,9 @@ export const NOTIFICATION_DEFAULT_CONFIG_PROVIDER = {
         duration: 4500,
         maxStack: 7,
         pauseOnHover: true,
-        animate: true
+        animate: true,
+        top: 40,
+        placement: 'topRight'
     }
 };
+

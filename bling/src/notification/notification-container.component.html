@@ -1,3 +1,7 @@
-<div class="bl-notification-container">
+<div class="bl-notification-container bl-notification-container-{{_placement}}"
+  [style.top]="_placement === 'topLeft' || _placement ==='topRight' ? _top : null"
+  [style.bottom]="_placement === 'bottomLeft' || _placement ==='bottomRight' ? _bottom : null"
+  [style.right]="_placement === 'bottomRight' || _placement ==='topRight' ? '20px' : null"
+  [style.left]="_placement === 'topLeft' || _placement ==='bottomLeft' ? '20px' : null">
   <bl-notification *ngFor="let item of notificationQueue;" [data]="item"></bl-notification>
 </div>

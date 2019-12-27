@@ -6,6 +6,7 @@ import { ModelComponent } from './example/model/model.component';
 import { LoadingComponent } from './example/loading/loading.component';
 import { TooltipComponent } from './example/tooltip/tooltip.component';
 import { SwitchComponent } from './example/switch/switch.component';
+import { NotificationComponent } from './example/notification/notification.component';
 
 
 const routes: Routes = [
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'loading', component: LoadingComponent },
   { path: 'tooltip', component: TooltipComponent },
   { path: 'switch', component: SwitchComponent },
+  { path: 'notification', component: NotificationComponent },
 ];
 
 @NgModule({

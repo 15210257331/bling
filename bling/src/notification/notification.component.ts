@@ -13,7 +13,7 @@ export class NotificationComponent implements OnInit, OnDestroy {
 
     @HostBinding('@flyInOut') flyInOut = 'in'; // 绑定初始动画状态
 
-    @HostBinding('class.bl-notification') classNames = true;
+    @HostBinding('class.bl-notification') className = true;
 
     option: NotificationConfig;
 
@@ -21,13 +21,9 @@ export class NotificationComponent implements OnInit, OnDestroy {
 
     closeTimer: any;
 
-    className;
-
     @Input()
     set data(value: NotificationConfig) {
         this.option = value;
-        const type = value.type;
-        this.className = `thy-notify thy-notify-${type}`;
     }
 
     @HostListener('mouseenter') mouseenter() {
@@ -56,7 +52,7 @@ export class NotificationComponent implements OnInit, OnDestroy {
     }
 
     close() {
-        this.notificationService.removeItemById(this.option.id);
+        this.notificationService.remove(this.option.id);
     }
 
     private _creatCloseTimer() {

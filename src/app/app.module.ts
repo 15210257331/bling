@@ -21,6 +21,7 @@ import { LoadingComponent } from './example/loading/loading.component';
 import { TooltipComponent } from './example/tooltip/tooltip.component';
 import { ApiTableComponent } from './api-table/api-table.component';
 import { SwitchComponent } from './example/switch/switch.component';
+import { NotificationComponent } from './example/notification/notification.component';
 
 export function hljsLanguages() {
   return [
@@ -41,7 +42,8 @@ export function hljsLanguages() {
     LoadingComponent,
     TooltipComponent,
     ApiTableComponent,
-    SwitchComponent
+    SwitchComponent,
+    NotificationComponent
   ],
   imports: [
     BrowserModule,

@@ -15,7 +15,7 @@ import { NOTIFICATION_DEFAULT_CONFIG_PROVIDER } from './notification.config';
         NotificationContainerComponent
     ],
     providers: [
-        NOTIFICATION_DEFAULT_CONFIG_PROVIDER
+        NOTIFICATION_DEFAULT_CONFIG_PROVIDER,
     ],
     imports: [
         CommonModule,

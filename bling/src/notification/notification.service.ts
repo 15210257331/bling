@@ -14,11 +14,6 @@ import { DomPortalOutlet, ComponentPortal } from '@angular/cdk/portal';
 import { NotificationContainerComponent } from './notification-container.component';
 import { NOTIFICATION_DEFAULT_CONFIG, NotificationConfig, NOTIFICATION_CONFIG } from './notification.config';
 
-const NOTIFY_OPTION_DEFAULT = {
-    duration: 4500,
-    pauseOnHover: true,
-    maxStack: 8
-};
 let globalCounter = 0;
 
 @Injectable({
@@ -30,7 +25,9 @@ export class NotificationService {
 
     notificationQueue: NotificationConfig[] = [];
 
-    private _config: NotificationConfig;
+    portalOutlet: any;
+
+    private config: NotificationConfig;
 
     private containerRef: ComponentRef<NotificationContainerComponent>;
 
@@ -41,33 +38,41 @@ export class NotificationService {
         @Inject(NOTIFICATION_DEFAULT_CONFIG) defaultConfig: NotificationConfig,
         @Optional() @Inject(NOTIFICATION_CONFIG) config: NotificationConfig,
     ) {
-        this._config = { ...defaultConfig, ...config };
+        this.config = { ...defaultConfig, ...config };
     }
 
-    private _createNotification() {
+    private _createNotification(option?: NotificationConfig) {
         if (!this.containerRef) {
-            const portalOutlet = new DomPortalOutlet(
+            this.portalOutlet = new DomPortalOutlet(
                 document.body,
                 this.componentFactoryResolver,
                 this.appRef,
                 this.injector
             );
             const componentPortal = new ComponentPortal(NotificationContainerComponent, null);
-            this.containerRef = portalOutlet.attachComponentPortal(componentPortal);
+            this.containerRef = this.portalOutlet.attachComponentPortal(componentPortal);
             Object.assign(this.containerRef.instance, {
-                notificationQueue$: this.notificationQueue$
+                notificationQueue$: this.notificationQueue$,
+                placement: option.placement || this.config.placement,
+                top: option.top || this.config.top,
+                bottom: option.bottom || this.config.bottom
             });
-            this.containerRef.changeDetectorRef.detectChanges();
+            this.containerRef.changeDetectorRef.detectChanges(); // 避免出现二次检查错误
+        } else {
+
         }
     }
+
     create(option: NotificationConfig) {
-        this._createNotification();
-        if (this.notificationQueue.length > this._config.maxStack) {
+        this._createNotification(option);
+        if (this.notificationQueue.length > this.config.maxStack) {
             this.notificationQueue.shift();
         }
-        this.notificationQueue.push(this.mergeConfig(option));
+        const notificationConfig = Object.assign({}, this.config, { id: globalCounter++ }, option);
+        this.notificationQueue.push(notificationConfig);
         this.notificationQueue$.next(this.notificationQueue);
     }
+
     success(title?: string, content?: string) {
         this.create({
             type: 'success',
@@ -75,6 +80,7 @@ export class NotificationService {
             content
         });
     }
+
     info(title?: string, content?: string, detail?: string) {
         this.create({
             type: 'info',
@@ -82,6 +88,7 @@ export class NotificationService {
             content,
         });
     }
+
     warning(title?: string, content?: string, detail?: string) {
         this.create({
             type: 'warning',
@@ -89,6 +96,7 @@ export class NotificationService {
             content,
         });
     }
+
     error(title?: string, content?: string, detail?: string) {
         this.create({
             type: 'error',
@@ -96,18 +104,22 @@ export class NotificationService {
             content,
         });
     }
-    removeItemById(id?: number | string) {
+
+    // 关闭notifica
+    remove(id?: number | string) {
         if (!id) {
             this.notificationQueue = [];
             this.notificationQueue$.next(this.notificationQueue);
+            // 同时清除portal
+            if (this.portalOutlet) {
+                this.portalOutlet.detach();
+                this.containerRef = null;
+            }
         } else {
             this.notificationQueue = this.notificationQueue.filter(item => {
                 return item.id !== id;
             });
             this.notificationQueue$.next(this.notificationQueue);
         }
-    }
-    mergeConfig(config: NotificationConfig) {
-        return Object.assign({}, NOTIFY_OPTION_DEFAULT, { id: globalCounter++ }, config);
     }
 }
