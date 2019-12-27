@@ -64,6 +64,7 @@ export class NotificationService {
     }
 
     create(option: NotificationConfig) {
+        console.log(option)
         this._createNotification(option);
         if (this.notificationQueue.length > this.config.maxStack) {
             this.notificationQueue.shift();
@@ -81,7 +82,7 @@ export class NotificationService {
         });
     }
 
-    info(title?: string, content?: string, detail?: string) {
+    info(title?: string, content?: string,) {
         this.create({
             type: 'info',
             title: title || '提示',
@@ -89,7 +90,7 @@ export class NotificationService {
         });
     }
 
-    warning(title?: string, content?: string, detail?: string) {
+    warning(title?: string, content?: string,) {
         this.create({
             type: 'warning',
             title: title || '警告',
@@ -97,7 +98,7 @@ export class NotificationService {
         });
     }
 
-    error(title?: string, content?: string, detail?: string) {
+    error(title?: string, content?: string,) {
         this.create({
             type: 'error',
             title: title || '错误',

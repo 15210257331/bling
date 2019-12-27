@@ -45,16 +45,16 @@ export class NotificationComponent implements OnInit {
   }
 
   info() {
-    this.notificationService.success('info', 'info 提示');
+    this.notificationService.info('info', 'info 提示');
   }
   warning() {
-    this.notificationService.success('warning', 'warning 提示');
+    this.notificationService.warning('warning', 'warning 提示');
   }
   success() {
     this.notificationService.success('success', 'success 提示');
   }
   error() {
-    this.notificationService.success('error', 'error 提示');
+    this.notificationService.error('error', 'error 提示');
   }
 
   create(placement) {

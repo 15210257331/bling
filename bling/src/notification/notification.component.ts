@@ -41,11 +41,12 @@ export class NotificationComponent implements OnInit, OnDestroy {
     constructor(private notificationService: NotificationService) {}
 
     ngOnInit() {
+        
         const iconName = {
-            success: 'check-circle-fill',
-            info: 'info-circle-fill',
-            warning: 'waring-fill',
-            error: 'close-circle-fill'
+            success: 'success',
+            info: 'info',
+            warning: 'warning',
+            error: 'error'
         };
         this.notifyIconName = iconName[this.option.type];
         this._creatCloseTimer();

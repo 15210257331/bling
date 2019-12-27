@@ -37,7 +37,6 @@ export class NotificationContainerComponent implements OnInit {
     constructor() { }
 
     ngOnInit() {
-        console.log(this._placement);
         this.setConfig();
         this.notificationQueue$.subscribe((data: any) => {
             this.notificationQueue = data || [];
