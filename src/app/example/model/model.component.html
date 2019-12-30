@@ -1,3 +1,14 @@
-<p>
-  <button bl-button [blType]="'warning'" [blSquare]="true" (click)="openDailog()">打开一个弹窗>warning</button>
-</p>
+<div class="part">
+  <span>弹窗</span>
+  <p>
+    <button bl-button [blType]="'default'" (click)="openDailog()" [blSquare]="false">打开一个弹窗</button>
+  </p>
+</div>
+
+<div class="part">
+  <pre><code class="code" lang="typescript" [highlight]="code"></code></pre>
+</div>
+
+<div class="part">
+  <app-api-table [apis]="apis"></app-api-table>
+</div>

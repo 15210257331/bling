@@ -13,19 +13,22 @@ export class ModelComponent implements OnInit {
     public thyDialog: ThyDialog
   ) { }
 
+  apis = [];
+
+  code;
+
   ngOnInit() {
   }
 
   openDailog() {  // initialState 是一个对象
-    this.thyDialog.open(
-      ModelComponentComponent,
+    this.thyDialog.open(ModelComponentComponent,
       {
         initialState: {
-          data: '123'
+          data: '我是传入的内容'
         },
-        width: '85vw'
+        width: '40vw'
       }
-    )
+    );
   }
 
 }

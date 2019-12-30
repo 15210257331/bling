@@ -8,32 +8,46 @@ import { NotificationService } from 'bling/src/public-api';
 })
 export class NotificationComponent implements OnInit {
 
-  aa;
+  code = `info() {
+    this.notificationService.info('info', 'info 提示');
+  }`
 
   apis = [
     {
-      property: 'blType',
-      description: '按钮类型 default | warning | danger | link | empty',
+      property: 'type',
+      description: 'notification类型 success | info | warning | error',
       type: 'string',
-      default: 'default'
+      default: 'success'
     },
     {
-      property: 'blSquare',
-      description: '是否圆角',
-      type: 'boolean',
-      default: 'false'
-    },
-    {
-      property: 'blDisabled',
-      description: '是否禁用',
-      type: 'boolean',
-      default: 'false'
-    },
-    {
-      property: 'blSize',
-      description: '大小 md| lg | sm ',
+      property: 'title',
+      description: '标题',
       type: 'string',
+      default: null
+    },
+    {
+      property: 'duration',
+      description: '存在时间',
+      type: 'number',
+      default: '4000'
+    },
+    {
+      property: 'maxStack',
+      description: '最大存在数量',
+      type: 'number',
+      default: '7'
+    },
+    {
+      property: 'pauseOnHover',
+      description: '鼠标悬停是否一直存在',
+      type: 'boolean',
       default: 'md'
+    },
+    {
+      property: 'placement',
+      description: '位置 topLeft| topRight | bottomLeft| bottomRight ',
+      type: 'string',
+      default: 'topRight'
     },
   ];
 

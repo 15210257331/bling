@@ -1,24 +1,28 @@
 <div class="part">
-    <span>4中形式</span>
-    <p>
-      <button bl-button [blType]="'default'" (click)="success()" [blSquare]="false">success</button>
-      <button bl-button [blType]="'default'" (click)="info()" [blSquare]="false">info</button>
-      <button bl-button [blType]="'warning'" (click)="warning()" [blSquare]="false">warning</button>
-      <button bl-button [blType]="'danger'" (click)="error()" [blSquare]="false">error</button>
-    </p>
-    <span>4个位置</span>
-    <p>
-      <button bl-button [blType]="'default'" (click)="create('topRight')" [blSquare]="true">右上</button>
-      <button bl-button [blType]="'default'" (click)="create('bottomRight')" [blSquare]="true">右下</button>
-      <button bl-button [blType]="'default'" (click)="create('topLeft')" [blSquare]="true">左上</button>
-      <button bl-button [blType]="'default'" (click)="create('bottomLeft')" [blSquare]="true">左下</button>
-    </p>
-  </div>
-  
-  <div class="part">
-    <pre><code class="code" lang="typescript" [highlight]="aa"></code></pre>
-  </div>
-  
-  <div class="part">
-    <app-api-table [apis]="apis"></app-api-table>
-  </div>
+  <span>4种形式</span>
+  <p>
+    <button bl-button [blType]="'default'" (click)="success()" [blSquare]="false">success</button>
+    <button bl-button [blType]="'default'" (click)="info()" [blSquare]="false">info</button>
+    <button bl-button [blType]="'warning'" (click)="warning()" [blSquare]="false">warning</button>
+    <button bl-button [blType]="'danger'" (click)="error()" [blSquare]="false">error</button>
+  </p>
+</div>
+<div class="part">
+  <pre><code class="code" lang="typescript" [highlight]="code"></code></pre>
+  <code>private notificationService: NotificationService</code>
+</div>
+<div class="part">
+  <span>4个位置</span>
+  <p>
+    <button bl-button [blType]="'default'" (click)="create('topRight')" [blSquare]="true">右上</button>
+    <button bl-button [blType]="'default'" (click)="create('bottomRight')" [blSquare]="true">右下</button>
+    <button bl-button [blType]="'default'" (click)="create('topLeft')" [blSquare]="true">左上</button>
+    <button bl-button [blType]="'default'" (click)="create('bottomLeft')" [blSquare]="true">左下</button>
+  </p>
+</div>
+
+
+
+<div class="part">
+  <app-api-table [apis]="apis"></app-api-table>
+</div>

@@ -12,7 +12,8 @@ export class ModelComponentComponent implements OnInit {
   @Input() data: string;
 
   constructor(
-    private thyDialogRef: ThyDialogRef<any>, public thyDialog: ThyDialog
+    private thyDialogRef: ThyDialogRef<any>,
+    public thyDialog: ThyDialog
   ) { }
 
   ngOnInit() {
