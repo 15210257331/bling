@@ -25,8 +25,8 @@ export const NOTIFICATION_DEFAULT_CONFIG_PROVIDER = {
     provide: NOTIFICATION_DEFAULT_CONFIG,
     useValue: {
         type: 'success',
-        title: '',
-        duration: 45000,
+        title: 'success',
+        duration: 4000,
         maxStack: 7,
         pauseOnHover: true,
         animate: true,

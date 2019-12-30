@@ -22,6 +22,7 @@ import { TooltipComponent } from './example/tooltip/tooltip.component';
 import { ApiTableComponent } from './api-table/api-table.component';
 import { SwitchComponent } from './example/switch/switch.component';
 import { NotificationComponent } from './example/notification/notification.component';
+import { CubeComponent } from './example/cube/cube.component';
 
 export function hljsLanguages() {
   return [
@@ -43,7 +44,8 @@ export function hljsLanguages() {
     TooltipComponent,
     ApiTableComponent,
     SwitchComponent,
-    NotificationComponent
+    NotificationComponent,
+    CubeComponent
   ],
   imports: [
     BrowserModule,
