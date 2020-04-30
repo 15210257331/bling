@@ -6,7 +6,7 @@
         "start": "ng serve --port 8080",
         "build:bling": "ng build bling",
         "publish": "npm publish",
-        "build": "ng build",
+        "build":"node --max-old-space-size=8000 node_modules/@angular/cli/bin/ng build --prod --build--optimizer --aot",
         "test": "ng test",
         "lint": "ng lint",
         "e2e": "ng e2e"
